@@ -45,8 +45,6 @@ NexT.boot.registerEvents = function() {
     });
   });
 
-  window.addEventListener('resize', NexT.utils.initSidebarDimension);
-
   window.addEventListener('hashchange', () => {
     const tHash = location.hash;
     if (tHash !== '' && !tHash.match(/%\S{2}/)) {
@@ -63,7 +61,6 @@ NexT.boot.refresh = function() {
    * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
    */
   CONFIG.prism && window.Prism.highlightAll();
-  CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
   CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
     background: 'var(--content-bg-color)'
   });
